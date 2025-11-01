@@ -1,4 +1,5 @@
 from odoo import fields, models
+from datetime import date
 
 class StudentPayment(models.Model):
     _name = "payment.course_payment"
@@ -20,5 +21,5 @@ class StudentPayment(models.Model):
             ('sep', "September"), ('oct', "October"), ('nov', "November"), ('dec', "December")
         ])
 
-    year = fields.Integer(string="Year", default=fields.Date.year)
+    year = fields.Integer(string="Year", default=lambda self: date.today().year)
         

@@ -1,5 +1,5 @@
 from odoo import fields, models
-
+from datetime import date
 
 class EmployeeSalary(models.Model):
     _name = "payment.employee.salary"
@@ -18,4 +18,4 @@ class EmployeeSalary(models.Model):
     payment_state = fields.Selection([
         ('unpaid', "Unpaid"), ('paid', "Paid")
     ], default='unpaid')
-    year = fields.Integer(string="Year", default=fields.Date.year)
+    year = fields.Integer(string="Year", default=lambda self: date.today().year)
