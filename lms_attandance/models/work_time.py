@@ -19,7 +19,7 @@ class WorkTime(models.Model):
 
 
 class Weekday(models.Model):
-    _name = "education.weekday"
+    _name = "attandance.weekday"
     _description = "Week Days"
 
     name = fields.Selection([
