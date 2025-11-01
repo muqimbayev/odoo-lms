@@ -13,7 +13,6 @@ class EmployeeSalary(models.Model):
         ])    
     base_salary = fields.Float(required=True)
     bonus = fields.Float(default=0)
-    deductions = fields.Float(default=0)
     total_salary = fields.Float(compute="_compute_total_salary", store=True)
     payment_state = fields.Selection([
         ('unpaid', "Unpaid"), ('paid', "Paid")
