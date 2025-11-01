@@ -11,6 +11,7 @@ class Students(models.Model):
     # certification_ids = fields.One2many(comodel_name="users.student_certification")
     # payment_ids = fields.One2many(comodel_name="users.payment")
     branch_ids = fields.Many2many(comodel_name="res.company", compute="_compute_branch_ids")
+    balance = fields.Float(string="Balance", default=0)
 
     @api.model_create_multi
     def create(self, vals_list):

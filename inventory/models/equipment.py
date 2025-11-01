@@ -12,9 +12,8 @@ class Equipment(models.Model):
         ('whiteboard', "Whiteboard"),
         ('other', "Other"),
     ], default="other")
-    building_id = fields.Many2one("education.building", string="Building")
-    room_id = fields.Many2one("education.room", string="Room")
-    serial_number = fields.Char(string="Serial Number")
+    building_id = fields.Many2one("building.building", string="Building")
+    room_id = fields.Many2one("building.room", string="Room")
     purchase_date = fields.Date(string="Purchase Date")
     condition = fields.Selection([
         ('new', "New"),

@@ -14,7 +14,7 @@ class Requirement(models.Model):
     quantity = fields.Integer(default=1)
     request_date = fields.Date(default=fields.Date.today)
     requested_by = fields.Many2one("res.users", string="Requested By")
-    branch_id = fields.Many2one("education.branch", string="Branch")
+    branch_id = fields.Many2one("res.company", string="Branch")
     status = fields.Selection([
         ('draft', "Draft"),
         ('approved', "Approved"),
