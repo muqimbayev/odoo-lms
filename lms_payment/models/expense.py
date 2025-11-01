@@ -8,9 +8,7 @@ class Expense(models.Model):
     name = fields.Char(required=True)
     category = fields.Selection([
         ('rent', "Rent"),
-        ('utilities', "Utilities"),
-        ('equipment', "Equipment"),
-        ('salary', "Salaries"),
+        ('employees', "Employees"),
         ('marketing', "Marketing"),
         ('other', "Other")
     ])
