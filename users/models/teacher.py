@@ -19,13 +19,11 @@ class Teacher(models.Model):
    
    user_id = fields.Many2one("res.users", string="User", required=True, ondelete="cascade")
    branch_id = fields.Many2many("res.company", required=True, string="Branch")
-   subject_ids = fields.Many2many(comodel_name="education.subjects", required=True)
    certification_id = fields.Many2many(comodel_name="users.certifications", string="Certification")
    department_id = fields.Many2one(comodel_name="users.department", string="Department")
    postion = fields.Selection([('head_teacher', "Head Teacher"), ("teacher", "Teacher"), ("support_teacher", "Support teacher")])
    salary = fields.Float(string="Salary")
 #    payment_ids = fields.One2many(comodel_name="payment.payment")
-#    group_ids = fields.Many2many(comodel_name="education.groups")
    work_schedule = fields.Selection([('full_time', "Full time"), ("part_time", "Part time"), ("hourly", "Hourly")])
 
    @api.model_create_multi

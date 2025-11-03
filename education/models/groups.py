@@ -31,7 +31,6 @@ class Group(models.Model):
     default='draft'
     )
     schedule_ids = fields.One2many("education.schedule", "group_id", string="Schedule")
-    room_id = fields.Many2one("building.room")
     branch_id = fields.Many2one("res.company", required=True, string="Branch")
     max_capacity = fields.Integer(default=20)
     # payment_ids = fields.One2many("payment.course_fee", "group_id")

@@ -9,7 +9,6 @@ class LessonSchedule(models.Model):
 
     group_id = fields.Many2one("education.groups", string="Group", required=True)
     teacher_id = fields.Many2one("lms.teacher", string="Teacher", required=True)
-    classroom_id = fields.Many2one("education.classroom", string="Classroom")
     day_of_week = fields.Selection(
         [
             ("mon", "Monday"),

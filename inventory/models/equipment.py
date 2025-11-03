@@ -13,7 +13,6 @@ class Equipment(models.Model):
         ('other', "Other"),
     ], default="other")
     building_id = fields.Many2one("building.building", string="Building")
-    room_id = fields.Many2one("building.room", string="Room")
     purchase_date = fields.Date(string="Purchase Date")
     condition = fields.Selection([
         ('new', "New"),

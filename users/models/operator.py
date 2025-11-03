@@ -7,7 +7,6 @@ class Operator(models.Model):
 
     user_id = fields.Many2one(comodel_name="res.users", string="User", required=True, ondelete="cascade")
     branch_id = fields.Many2many("res.company", required=True, string="Branch")
-    # payment_ids = fields.One2many("users.payment")
     
     @api.model_create_multi
     def create(self, vals_list):

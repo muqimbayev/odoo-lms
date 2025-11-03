@@ -7,9 +7,6 @@ class Students(models.Model):
     _inherits = {"res.users": "user_id"}
 
     user_id = fields.Many2one(comodel_name="res.users", string="User", required=True, ondelete="cascade")
-    group_ids = fields.Many2many(comodel_name="education.groups", string="group")
-    # certification_ids = fields.One2many(comodel_name="users.student_certification")
-    payment_ids = fields.One2many(comodel_name="payment.cousrse_payment")
     branch_ids = fields.Many2many(comodel_name="res.company", compute="_compute_branch_ids")
     balance = fields.Float(string="Balance", default=0)
 

@@ -6,7 +6,6 @@ class StudentPayment(models.Model):
     _description = "Monthly Student Payment"
 
     student_id = fields.Many2one("education.student", required=True)
-    group_id = fields.Many2one("education.group", required=True)
     amount_due = fields.Float(string="Amount Due", compute="_compute_amount_due")
     amount_paid = fields.Float(string="Amount Paid", default=0)
     payment_date = fields.Date(default=fields.Date.today)

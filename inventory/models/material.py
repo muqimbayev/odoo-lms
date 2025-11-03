@@ -13,6 +13,5 @@ class Material(models.Model):
     ], default="file")
 
     description = fields.Text()
-    subject_id = fields.Many2one("education.subject", string="Subject")
     uploaded_by = fields.Many2one("res.users", string="Uploaded By")
     upload_date = fields.Datetime(default=fields.Datetime.now)
