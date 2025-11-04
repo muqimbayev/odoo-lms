@@ -22,7 +22,7 @@ class HomeworkSubmission(models.Model):
     _order = "submit_date desc"
 
     homework_id = fields.Many2one("education.homework", string="Homework", required=True, ondelete="cascade")
-    student_id = fields.Many2one("lms.student", string="Student", required=True)
+    student_id = fields.Many2one("users.students", string="Student", required=True)
     submit_date = fields.Datetime( string="Submitted Date", default=lambda self: fields.Datetime.now())
     answer_text = fields.   Text(string="Answer Text")
     answer_file = fields.Binary(string="Attachment")

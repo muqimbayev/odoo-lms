@@ -5,7 +5,7 @@ class GroupStudent(models.Model):
     _name = "education.group_student"
     _description = "Group Student"
 
-    student_id = fields.Many2many("users.student", string="Student")
+    student_id = fields.Many2many("users.students", string="Student")
     status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive'), ('froozen', 'Froozen')])
     reason = fields.Text(string="Reason")
     date = fields.Date(string="Stoppend date")

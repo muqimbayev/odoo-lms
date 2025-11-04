@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_users_accountant_list" model="ir.ui.view">
+        <field name="name">users.accountant.list</field>
+        <field name="model">users.accountant</field>
+        <field name="arch" type="xml">
+            <list string="Accountants">
+                <field name="name"/>
+                <field name="login"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_users_accountant_form" model="ir.ui.view">
+        <field name="name">users.accountant.form</field>
+        <field name="model">users.accountant</field>
+        <field name="arch" type="xml">
+            <form string="Accountant">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="name" readonly="0"/>
+                            <field name="login" readonly="1"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_users_accountant" model="ir.actions.act_window">
+        <field name="name">Accountants</field>
+        <field name="res_model">users.accountant</field>
+        <field name="view_mode">list,form</field>
+     
+    </record>
+
+    <menuitem id="menu_users_accountant" name="Accountants"
+              parent="menu_users_root"
+              action="action_users_accountant"/>
+</odoo>

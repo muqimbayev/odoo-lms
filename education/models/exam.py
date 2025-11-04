@@ -35,7 +35,7 @@ class ExamResult(models.Model):
     _description = "Exam Result"
 
     exam_id = fields.Many2one("education.exam", required=True)
-    student_id = fields.Many2one("education.student", required=True)
+    student_id = fields.Many2one("users.students", required=True)
     score = fields.Float(string="Score", default=0)
     #Compute
     # passed = fields.Boolean(compute="_compute_passed", store=True)

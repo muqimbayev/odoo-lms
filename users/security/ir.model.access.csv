@@ -1,2 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_learning_managment_system_learning_managment_system,learning_managment_system.learning_managment_system,model_learning_managment_system_learning_managment_system,base.group_user,1,1,1,1
+access_users_accountant,access_users_accountant,model_users_accountant,base.group_user,1,1,1,1
+access_users_ceo,access_users_ceo,model_users_ceo,base.group_user,1,1,1,1
+access_users_department,access_users_department,model_users_department,base.group_user,1,1,1,1
+access_users_positions,access_users_positions,model_users_positions,base.group_user,1,1,1,1
+access_users_hr,access_users_hr,model_users_hr,base.group_user,1,1,1,1
+access_users_manager,access_users_manager,model_users_manager,base.group_user,1,1,1,1
+access_users_operator,access_users_operator,model_users_operator,base.group_user,1,1,1,1
+access_users_students,access_users_students,model_users_students,base.group_user,1,1,1,1
+access_users_certifications,access_users_certifications,model_users_certifications,base.group_user,1,1,1,1
+access_users_teacher,access_users_teacher,model_users_teacher,base.group_user,1,1,1,1
+access_users_work_places,access_users_work_places,model_users_work_places,base.group_user,1,1,1,1
+access_users_language,access_users_language,model_users_language,base.group_user,1,1,1,1
