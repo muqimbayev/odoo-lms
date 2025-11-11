@@ -1,17 +1,17 @@
 from odoo import fields, models, api
 
 
-class Subjects(models.Model):
-    _name = "education.subjects"
-    _description = "Education Subjects"
+class Course(models.Model):
+    _name = "education.course"
+    _description = "Education course"
 
     name = fields.Char(string="Name", required=True)
     duration = fields.Float(string="Duration")
-    category_id = fields.Many2one("education.subjects", string="Category")
+    category_id = fields.Many2one("education.course", string="Category")
     month_price = fields.Float(string="Month price")
     month_lesson = fields.Float(string="Month lesson count")
     teacher_ids = fields.Many2many("users.teacher", string="Teachers")
-    group_ids = fields.One2many("education.groups", inverse_name="subject_id")
+    group_ids = fields.One2many("education.groups", inverse_name="course_id")
     description = fields.Text(string="Note")
     #Compute fieldlar
     # student_count = fields.Integer(string="Student count", compute="_compute_student_count", store=True)

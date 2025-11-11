@@ -17,10 +17,11 @@ class Group(models.Model):
     _description = "Groups"
 
     name = fields.Char(string="Name", required=True)
-    subject_id = fields.Many2one(comodel_name="education.subjects")
+    course_id = fields.Many2one(comodel_name="education.course")
     teacher_ids = fields.Many2many("users.teacher")
     support_teacher_ids = fields.Many2one('users.teacher' ,compute="_compute_support_teacher")
     student_ids = fields.One2many("education.group_student", inverse_name="group_id")
+    student_count = fields.Integer(string="Student count", compute="_compute_student_count", store=True)
     status = fields.Selection(
     [
         ('draft', "Yangi"),
@@ -33,10 +34,14 @@ class Group(models.Model):
     schedule_ids = fields.One2many("education.schedule", "group_id", string="Schedule")
     branch_id = fields.Many2one("res.company", required=True, string="Branch")
     max_capacity = fields.Integer(default=20)
-    # payment_ids = fields.One2many("payment.course_fee", "group_id")
     notes = fields.Text(string="Notes")
     #Compute
     # remaining_seats = fields.Integer(string="remaining seats", compute="_compute_remaining_seats")
+
+    @api.depends('student_ids')
+    def _compute_student_count(self):
+        self.student_count = self.env['education.group_student'].search_count([('group_id', '=', self.id), ('status', '=', 'active')])
+
 
 
 

@@ -14,20 +14,11 @@ class WorkTime(models.Model):
         ('full_time', "Full Time"),
         ('part_time', "Part Time"),
     ], default='full_time')
-    work_day_ids = fields.Many2many(comodel_name="education.weekday", string="Weekend Days"
-                                    )
+    work_day_ids = fields.Many2many(comodel_name="education.weekday", string="Weekend Days")
 
 
 class Weekday(models.Model):
     _name = "attandance.weekday"
     _description = "Week Days"
 
-    name = fields.Selection([
-        ('monday', "Monday"),
-        ('tuesday', "Tuesday"),
-        ('wednesday', "Wednesday"),
-        ('thursday', "Thursday"),
-        ('friday', "Friday"),
-        ('saturday', "Saturday"),
-        ('sunday', "Sunday")
-    ], string="Day", required=True)
+    name = fields.Char(string="Name")

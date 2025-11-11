@@ -1,2 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_education_education,education.education,model_education_education,base.group_user,1,1,1,1
+access_education_category_user,education.category,model_education_category,base.group_user,1,1,1,1
+access_education_certification_user,education.certification,model_education_certification,base.group_user,1,1,1,1
+access_education_course_user,education.course,model_education_course,base.group_user,1,1,1,1
+access_education_exam_user,education.exam,model_education_exam,base.group_user,1,1,1,1
+access_education_exam_question_user,education.exam.question,model_education_exam_question,base.group_user,1,1,1,1
+access_education_exam_result_user,education.exam.result,model_education_exam_result,base.group_user,1,1,1,1
+access_education_group_student_user,education.group_student,model_education_group_student,base.group_user,1,1,1,1
+access_education_groups_user,education.groups,model_education_groups,base.group_user,1,1,1,1
+access_education_homework_user,education.homework,model_education_homework,base.group_user,1,1,1,1
+access_education_homework_submission_user,education.homework.submission,model_education_homework_submission,base.group_user,1,1,1,1
+access_education_schedule_user,education.schedule,model_education_schedule,base.group_user,1,1,1,1
+access_education_lesson_user,education.lesson,model_education_lesson,base.group_user,1,1,1,1

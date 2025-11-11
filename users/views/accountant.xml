@@ -18,12 +18,10 @@
             <form string="Accountant">
                 <sheet>
                     <group>
-                        <group>
                             <field name="user_id"/>
-                            <field name="name" readonly="0"/>
-                            <field name="login" readonly="1"/>
+                            <field name="name"/>
+                            <field name="login"/>
                             <field name="email"/>
-                        </group>
                     </group>
                 </sheet>
             </form>

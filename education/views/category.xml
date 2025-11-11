@@ -1,0 +1,50 @@
+<odoo>
+
+    <record id="education_category_list_views" model="ir.ui.view">
+        <field name="name">education_category_list_views</field>
+        <field name="model">education.category</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="education_category_from_views" model="ir.ui.view">
+            <field name="name">education_category_from_views</field>
+            <field name="model">education.category</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name"/>
+                    <notebook>
+                        <page string="Course">
+                            <field name="course_ids">
+                                <list editabe="bottom">
+                                    <field name="name"/>
+                                    <field name="duration"/>
+                                    <field name="month_price"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+    <record id="education_category_action" model="ir.actions.act_window">
+        <field name="name">Category</field>
+        <field name="res_model">education.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="education_cource_submenu"
+        name="Course" parent="education_cource_menu" action="education_course_action"/>
+
+    <menuitem
+        id="education_category_submenu"
+        name="Category" parent="education_cource_menu" action="education_category_action"/>
+
+</odoo>

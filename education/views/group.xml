@@ -1,0 +1,64 @@
+<odoo>
+
+    <record id="education_group_list_views" model="ir.ui.view">
+        <field name="name">education_group_list_views</field>
+        <field name="model">education.groups</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="course_id"/>
+                <field name="student_count"/>
+                <field name="max_capacity"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="education_group_form_views" model="ir.ui.view">
+        <field name="name">education_group_form_views</field>
+        <field name="model">education.groups</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"></field>
+                            <field name="course_id"></field>
+                            <field name="status"></field>
+                            <field name="branch_id"></field>
+                            <field name="max_capacity"></field>
+                        </group> 
+
+                        <group>
+                            <field name="student_count"></field>
+                            <field name="notes"></field>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Students">
+                            <field name="student_ids">
+                                <list editabe="bottom">
+                                    <field name="student_id"/>
+                                    <field name="date"/>
+                                    <field name="reason"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="education_group_action" model="ir.actions.act_window">
+        <field name="name">Groups</field>
+        <field name="res_model">education.groups</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem
+        id="education_group_menu"
+        name="Group" parent="education_menu" action="education_group_action"/>
+
+</odoo>

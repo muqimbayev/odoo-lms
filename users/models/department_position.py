@@ -19,6 +19,7 @@ class Positions(models.Model):
     is_active = fields.Boolean(string="Active", default=True)
     
     
+    
 
 
 

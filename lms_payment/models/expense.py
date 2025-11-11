@@ -10,6 +10,7 @@ class Expense(models.Model):
         ('rent', "Rent"),
         ('employees', "Employees"),
         ('marketing', "Marketing"),
+        ('material', "Material"),
         ('other', "Other")
     ])
     amount = fields.Float(required=True)

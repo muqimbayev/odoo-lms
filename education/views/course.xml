@@ -1,0 +1,71 @@
+<odoo>
+
+    <record id="education_cource_list_views" model="ir.ui.view">
+        <field name="name">education_cource_list_views</field>
+        <field name="model">education.course</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="duration"/>
+                <field name="category_id"/>
+                <field name="month_price"/>
+                <field name="month_lesson"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="education_cource_form_views" model="ir.ui.view">
+        <field name="name">education_cource_form_views</field>
+        <field name="model">education.course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="duration"/>
+                        <field name="category_id"/>
+                        <field name="month_price"/>
+                        <field name="month_lesson"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Teachers">
+                        <field name="teacher_ids">
+                            <list editabe="bottom">
+                                <field name="name"/>
+                                <field name="group_count"/>
+                                <field name="student_count"/>
+                            </list>
+                        </field>
+                        </page>
+
+                        <page string="Groups">
+                        <field name="group_ids">
+                            <list editabe="bottom">
+                                <field name="name"/>
+                                <field name="status"/>
+                                <field name="student_count"/>
+                            </list>
+                        </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="education_course_action" model="ir.actions.act_window">
+        <field name="name">Course</field>
+        <field name="res_model">education.course</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="education_menu"
+        name="Education"/>
+    <menuitem
+        id="education_cource_menu"
+        name="Course" parent="education_menu" action="education_course_action"/>
+</odoo>

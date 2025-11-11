@@ -11,7 +11,6 @@ class Attendance(models.Model):
         ('present', "Present"),
         ('absent', "Absent"),
         ('late', "Late"),
-        ('excused', "Excused"),
     ], default='present')
     reason = fields.Text(string="Reason")
 

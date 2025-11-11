@@ -8,7 +8,7 @@ class Certifications(models.Model):
     name = fields.Char(string="Name", required=True)
     degree = fields.Char(string="Degree")
     given_date = fields.Date(string="given date")
-    validity_period = fields.Float(string="validity period", default=0, required=True) #Agar 0 bo'lsa amal qilish muddati cheksiz bo'ladi
+    validity_period = fields.Float(string="validity period", default=0, required=True) #Agar 0 bolsa amal qilish muddati cheksiz bo'ladi
     #Compute
     # end_date = fields.Date(string="end date", compute="_compute_end_date")
 
